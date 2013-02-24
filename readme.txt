@@ -34,3 +34,9 @@ Joana
 Twitter [@green_mystery] (http://twitter.com/green_mystery)
 Webseite [GreenMystery] (http://green-mystery.org)
 
+Bugfixes/ Verbesserungen/ Sicherheitskram:
+Lenny
+===
+Twitter [@LennyCode] (https://twitter.com/LennyCode)
+Webseite [Vezoov] (http://www.vezoov.com/)
+
