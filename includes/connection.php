@@ -10,6 +10,4 @@ dbname=cms', /* Der Name deiner Datenbank */
 
 }
 
-}
-
 ?>
