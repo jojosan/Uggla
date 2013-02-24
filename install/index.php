@@ -20,32 +20,30 @@ include_once('../includes/connection.php');
 /*  Wenn SUBMIT dann erstelle users Tabelle*/
 if (isset($_POST['Submit'])) {
 	//Daten aus Form in Tabelle config eintragen
-		$webseiten_name = $_POST['webseiten_name'];
-		$webseiten_untertitel = $_POST['webseiten_untertitel'];
-		if (empty($webseiten_name) or empty($webseiten_untertitel)) {
-			$error = 'Alle Felder ausfüllen';	
-		} else {
-	$user = $pdo->prepare('INSERT INTO config (webseiten_name, webseiten_untertitel) VALUES (?, ?)');
-			
-			$user->bindValue(1, $webseiten_name);
-			$user->bindValue(2, $webseiten_untertitel);
-			
-			$user->execute();
-				if (mysql_errno() == 0) {
-		$error = 'Weiter zum zweiten Schritt';
-		header('Location: install_2.php');	
+	$webseiten_name = htmlspecialchars(trim($_POST['webseiten_name']));
+	$webseiten_untertitel = htmlspecialchars(trim($_POST['webseiten_untertitel']));
+	
+	if (empty($webseiten_name) or empty($webseiten_untertitel)) $error = 'Alle Felder ausfüllen';
+	else {
+		$user = $pdo->prepare('INSERT INTO config (webseiten_name, webseiten_untertitel) VALUES (?, ?)');
+
+		$user->bindValue(1, $pdo->real_escape_string($webseiten_name));
+		$user->bindValue(2, $pdo->real_escape_string($webseiten_untertitel));
+		
+		$user->execute();
+		
+		if (mysql_errno() == 0) {
+			$error = 'Weiter zum zweiten Schritt';
+			header('Location: install_2.php');	
+		}
+		else $error = 'Fehler bei der Benutzer-Tabelle ". mysql_errno() .":". mysql_error()."';
 	}
-	else{ // Wenn MySQL Fehler..
-		$error = 'Fehler bei der Benutzer-Tabelle ". mysql_errno() .":". mysql_error()."';	
-	}
-}
 }
 ?>
 <!doctype html>
 <html>
 	<head>
 		<meta charset="UTF-8" />
-
 		<title>Installation</title>
 		<link rel="stylesheet" type="text/css" href="../assets/style.css">
 	</head>
