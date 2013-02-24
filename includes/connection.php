@@ -1,4 +1,4 @@
-<?php
+<?php	
 	try {	
 $pdo = new PDO('mysql:
 host=localhost; 
@@ -10,5 +10,6 @@ dbname=cms', /* Der Name deiner Datenbank */
 
 }
 
+}
 
 ?>
