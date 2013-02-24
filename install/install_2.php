@@ -23,11 +23,12 @@ if (isset($_POST['Submit'])) {
 	
 	if (empty($user_name) or empty($user_password)) $error = 'Alle Felder ausfüllen';
 	else {
-		$query = $pdo->prepare('INSERT INTO users (user_name, user_mail, user_password, user_salt) VALUES (?, ?, ?)');
+		$query = $pdo->prepare('INSERT INTO users (user_name, user_mail, user_password, user_salt) VALUES (?, ?, ?, ?)');
 		
 		$query->bindValue(1, $pdo->real_escape_string($user_name));
 		$query->bindValue(2, $pdo->real_escape_string($user_mail));
-		$query->bindValue(4, crypt($user_password, '$6$rounds=131134$'.$user_salt.'$'));
+		$query->bindValue(3, crypt($user_password, '$6$rounds=131134$'.$user_salt.'$'));
+		$query->bindValue(4, $pdo->real_escape_string($user_salt));
 		
 		$query->execute();
 		if (mysql_errno() == 0) {
