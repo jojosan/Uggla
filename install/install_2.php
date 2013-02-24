@@ -16,34 +16,32 @@ include_once('../includes/connection.php');
 /*  Wenn SUBMIT dann erstelle users Tabelle*/
 if (isset($_POST['Submit'])) {
 	//Daten aus Form in Tabelle config eintragen
-		$user_name = $_POST['user_name'];
-		$user_mail = $_POST['user_mail'];
-		@$user_password = $_POST['user_password'];
-		if (empty($user_name) or empty($user_password)) {
-			$error = 'Alle Felder ausfüllen';	
-		} else {
-	$query = $pdo->prepare('INSERT INTO users (user_name, user_mail, user_password) VALUES (?, ?, ?)');
-			
-			$query->bindValue(1, $user_name);
-			$query->bindValue(2, $user_mail);
-			$query->bindValue(4, md5($user_password));
-			
-			$query->execute();
-			if (mysql_errno() == 0) {
-		$error = 'Weiter zum dritten Schritt';
-		header('Location: install_3.php');	
+	$user_name = htmlspecialchars(trim($_POST['user_name']));
+	$user_mail = htmlspecialchars(trim($_POST['user_mail']));
+	$user_password = htmlspecialchars(trim($_POST['user_password']));
+	$user_salt = md5(md5(md5(time().sha1($user_name))));
+	
+	if (empty($user_name) or empty($user_password)) $error = 'Alle Felder ausfüllen';
+	else {
+		$query = $pdo->prepare('INSERT INTO users (user_name, user_mail, user_password, user_salt) VALUES (?, ?, ?)');
+		
+		$query->bindValue(1, $pdo->real_escape_string($user_name));
+		$query->bindValue(2, $pdo->real_escape_string($user_mail));
+		$query->bindValue(4, crypt($user_password, '$6$rounds=131134$'.$user_salt.'$'));
+		
+		$query->execute();
+		if (mysql_errno() == 0) {
+			$error = 'Weiter zum dritten Schritt';
+			header('Location: install_3.php');	
+		}
+		else $error = 'Fehler bei der Benutzer-Tabelle ". mysql_errno() .":". mysql_error()."';
 	}
-	else{ // Wenn MySQL Fehler..
-		$error = 'Fehler bei der Benutzer-Tabelle ". mysql_errno() .":". mysql_error()."';	
-	}
-}
 }
 ?>
 <!doctype html>
 <html>
 	<head>
 		<meta charset="UTF-8" />
-
 		<title>Installation</title>
 		<link rel="stylesheet" type="text/css" href="../assets/style.css">
 	</head>
