@@ -1,0 +1,160 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+html, body { 
+	height: 100%;
+	background: #fcfcfc;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+body {
+	padding-top: 100px;
+	font-family: arial;
+	color: chucknorris;
+}
+
+.container {
+	width: 600px;
+	margin: 0 auto;
+}
+
+a:link, a:visited {
+	color: slateGray;
+	text-decoration: none;
+	border-bottom: 1px dotted slateGray;
+}
+
+a:hover {
+	color: #444;
+	border-bottom-color: #444; 
+}
+
+small {
+	color: #999;
+	font-style: italic;
+}
+
+p {
+	line-height: 25px;
+	text-align: justify;
+	color: #444;
+	font-size: 15px;
+
+}
+
+strong {
+	font-weight: 600;	
+}
+
+ol li {
+	line-height: 50px;	
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 15px 0;
+   font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #d96d55;
+	text-decoration: none;
+}
+
+input[type=text], input[type=password], textarea {
+	-webkit-appearance:	none;
+	padding: 5px;
+	border: 1px solid #ccc;	
+}
+
+input[type=text]:focus, input[type=password]:focus, textarea:focus {
+	outline: none;
+	
+}
+
+
+/*
+ * Installation
+ */
+#install input[type=text], #install input[type=password], #install textarea {
+	-webkit-appearance:	none;
+	padding: 5px;
+	border: 1px solid #ccc;
+	width: 400px;
+	height: 30px;
+	margin: 0px 0px 10px 0px;
+	font-family: 'Open Sans', sans-serif;
+    font-weight: 400;	
+	color: #666666;
+}
+
+#install input[type=text]:focus, #install input[type=password]:focus, #install textarea:focus {
+	outline: none;
+	
+}
+
+#install input[type=submit] {
+	-webkit-appearance:	none;
+	padding: 5px;
+	border: 1px solid #ccc;
+	width: 100px;
+	height: 30px;
+	font-family: 'Open Sans', sans-serif;
+    font-weight: 600;	
+	color: #d96d55;
+	float: right;
+	background: #fff;
+	margin: 0px -12px 0px 0px;
+}
+
+#installation {
+	width: 400px;
+	margin: 0 auto;	
+}
+
+.installbar {
+	height: 3px;
+	position: absolute;
+	top: 0px;
+	background: #d96d55; 		
+}
+
+#schritt {
+	position: absolute;
+	top: 20px;
+	background: #ffffff;
+	display: block;
+	padding: 10px 30px;
+	font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+	color: #666666;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+}
+
+
+/*
+ * Clearfix: contain floats
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
