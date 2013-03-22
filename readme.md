@@ -1,7 +1,8 @@
-# CMS
-Login nach der Installation (cms.sql)
-Name: demo
-Passwort: demo
+# Pina
+![Pina in action](./assets/pinainaction.png)  
+Login nach der Installation (cms.sql)  
+Name: demo  
+Passwort: demo  
 
 Was es kann:
 * Login
