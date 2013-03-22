@@ -19,7 +19,6 @@ Unbedingt in der nächsten Version:
 * Author des Artikels ausgeben
 * Profil bearbeiten (Einstellungen)
 * Installationsprozess hinzufügen [Teilweise eingefügt]
-* * *
 ## Dennis
 Skype: dennism1995 
 Twitter [@weltraumakustik](http://twitter.com/weltraumakustik)
