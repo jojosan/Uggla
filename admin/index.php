@@ -1,11 +1,13 @@
 <?php
 
 session_start();
+include_once('../includes/config.php');
 include_once('../includes/connection.php');
-
-if (isset($_SESSION['logged_in'])) {
-	?>
-    <!doctype html>
+include_once('../includes/article.php');
+include_once('../includes/user.php');
+$user = new User;
+if($user->logged_in()) { ?>
+<!doctype html>
 <html>
 	<head>
 		<meta charset="UTF-8" />
@@ -16,12 +18,12 @@ if (isset($_SESSION['logged_in'])) {
 
 	<body>
 		<div class="container">
-				<a href="index.php" id="logo">Startseite</a>
+				<a href="index.php" id="logo">Startseite</a> &ndash; <a href="../">Seite ansehen</a>
 				<br />
                 
                 <ol>
                 	<li><a href="add.php">Artikel schreiben</a></li>
-                    <li><a href="delete.php">Artikel verwalten</a></li>
+                    <li><a href="manage.php">Artikel verwalten</a></li>
                     <li><a href="logout.php">Abmelden</a></li>
                 </ol>
                 	
@@ -29,52 +31,8 @@ if (isset($_SESSION['logged_in'])) {
 		</div>
 	</body>
 </html>
-    <?php
-} else {
-	if (isset($_POST['username'], $_POST['password'])) {
-		$username = mysql_real_escape_string($_POST['username']);	
-		$password = md5($_POST['password']);
-		
-		if (empty($username) or empty($password)) {
-			$error = 'Bitte alle Felder ausfüllen!';
-		} else {
-			$query = $pdo->prepare("SELECT * FROM users WHERE user_name = ? AND user_password = ?");
-			
-			$query->bindValue(1, $username);
-			$query->bindValue(2, $password);
-			
-			$query->execute();
-			
-			$num = $query->rowCount();
-			
-			if($num == 1) {
-				//JA
-				$query = $pdo->prepare("INSERT INTO users_logged (user_name, user_ip, timestamp, status) VALUES (?, ?, ?, ?)");
-				
-				$query->bindValue(1, $username);
-				$query->bindValue(2, getenv('REMOTE_ADDR'));
-				$query->bindValue(3, time());
-				$query->bindValue(4, 'erfolgreich');	
-				
-				$query->execute();
-			
-				$_SESSION['logged_in'] = true;
-				header('Location: index.php');
-				exit();
-			} else {
-				//NEIN
-				$query = $pdo->prepare("INSERT INTO users_logged (user_name, user_ip, timestamp, status) VALUES (?, ?, ?, ?)");
-				
-				$query->bindValue(1, $_POST['username']);
-				$query->bindValue(2, getenv('REMOTE_ADDR'));
-				$query->bindValue(3, time());
-				$query->bindValue(4, 'gescheitert');	
-				
-				$query->execute();
-				$error = 'Falsche Daten!';
-			}
-		}
-	}
+    <?php } else {
+		$error = $user->log_in($_POST['username'], $_POST['password'], "index.php");
 	?>
     <!doctype html>
 <html>

@@ -1,17 +1,16 @@
 <?php
-
+include_once('includes/config.php');
 include_once('includes/connection.php');
 include_once('includes/article.php');
 
 $article = new Article;
-$articles = $article->fetch_all();
+$articles = $article->fetch_all("article_timestamp");
 
 ?>
 <!doctype html>
 <html>
 	<head>
 		<meta charset="UTF-8" />
-
 		<title>CMS</title>
 		<link rel="stylesheet" type="text/css" href="assets/style.css">
 	</head>
