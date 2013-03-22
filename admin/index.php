@@ -45,7 +45,7 @@ if($user->logged_in()) { ?>
 
 	<body>
 		<div class="container">
-				<a href="index.php" id="logo">Startseite</a>
+				<a href="index.php" id="logo">Startseite</a> &ndash; <a href="../">Seite ansehen</a>
 				<br /><br />
                 
                 <?php if (isset($error)) { ?>
