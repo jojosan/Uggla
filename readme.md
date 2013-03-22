@@ -7,11 +7,10 @@ Was es kann:
 * Login
 * Artikel schreiben
 * Artikel bearbeiten und verwalten
-* Logout 
 * Erster Installations Prozess erstellt Datenbanken [Richtige Version folgt]
+* Einfache Templatefunktion
 
 Was es in dieser Version noch nicht kann: 
-* Template via. Include (derzeit wird HTML eingebunden)
 * Name des Authors (Artikel) ausgeben
 
 Unbedingt in der nächsten Version:
