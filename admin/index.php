@@ -3,8 +3,7 @@
 session_start();
 include_once('../includes/config.php');
 include_once('../includes/connection.php');
-include_once('../includes/article.php');
-include_once('../includes/user.php');
+include_once('../includes/system.php');
 $user = new User;
 if($user->logged_in()) { ?>
 <!doctype html>
