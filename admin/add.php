@@ -7,7 +7,7 @@ include_once('../includes/system.php');
 
 $user = new User;
 
-$article = new Article;
+$article = new Article("");
 
 if ($user->logged_in()) { 
 	$error = $article->create($_POST['title'], $_POST['content']);

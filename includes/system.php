@@ -1,6 +1,20 @@
 <?php
 	class Article {
-		public function fetch_all($orderby) {
+		public function __construct($id){
+			global $pdo;
+
+			$query = $pdo->prepare("SELECT * FROM article WHERE article_id = ?");
+			$query->bindValue(1, $id);
+			$query->execute();
+			
+			$article = $query->fetch();
+			$this->id = $article['article_id'];
+			$this->title = $article['article_title'];
+			$this->content = $article['article_content'];
+			$this->timestamp = $article['article_timestamp'];
+			$this->author = $article['article_author'];
+		}
+		/*public function fetch_all($orderby) {
 			global $pdo;
 
 			$query = $pdo->prepare("SELECT * FROM article ORDER BY ? ASC");
@@ -18,7 +32,7 @@
 			$query->execute();
 
 			return $query->fetch();
-		}
+		}*/
 		public function create($title, $content/*, $user*/){
 			global $pdo;
 			if (isset($title, $content)) {
@@ -67,6 +81,27 @@
 		}
 	}
 	
+	/*########
+	#Articles#
+	########*/
+	
+	class Articles{
+		public function fetch_all($orderby/*, $ascordesc*/){
+			global $pdo;
+			$query = $pdo->prepare("SELECT article_id FROM article ORDER BY ? ASC");
+			$query->bindValue(1, $orderby);
+			//$query->bindValue(2, $ascordesc);
+			$query->execute();
+
+			$ids = $query->fetchAll(PDO::FETCH_ASSOC);
+			foreach($ids as $id){
+				$article = new Article($id['article_id']);
+				$articles[] = clone $article;
+				$article = null;
+			}
+			return $articles;
+		}
+	}
 	/*########
 	## User ##
 	########*/

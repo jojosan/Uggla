@@ -6,9 +6,10 @@ include_once('../includes/connection.php');
 include_once('../includes/system.php');
 
 $user = new User;
-$article = new Article;
+
 
 if ($user->logged_in() && isset($_GET['id'])){
+	$article = new Article("");
 	if(isset($_POST['title'], $_POST['content'])){
 		$error = $article->update($_GET['id'], $_POST['title'], $_POST['content']);
 		if(!isset($error)){
@@ -16,7 +17,7 @@ if ($user->logged_in() && isset($_GET['id'])){
 			exit();
 		}
 	}
-	$toedit = $article->fetch($_GET['id']);
+	$toedit = new Article($_GET['id']);
 
 ?>
 <!doctype html>
@@ -41,8 +42,8 @@ if ($user->logged_in() && isset($_GET['id'])){
                 <?php } ?>
                 
                 <form action="edit.php?id=<?php echo $_GET['id']; ?>" method="post">
-                	<input type="text" name="title" placeholder="Titel" value="<?php echo $toedit['article_title']?>"/><br /><br />
-                    <textarea rows="15"	cols="50" placeholder="Artikel" name="content"><?php echo str_replace("<br />", "", $toedit['article_content']);?></textarea><br /><br />
+                	<input type="text" name="title" placeholder="Titel" value="<?php echo $toedit->title; ?>"/><br /><br />
+                    <textarea rows="15"	cols="50" placeholder="Artikel" name="content"><?php echo str_replace("<br />", "", $toedit->content);?></textarea><br /><br />
                     <input type="submit" value="&Auml;nderungen speichern" />
                     
                 </form>

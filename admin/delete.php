@@ -3,7 +3,7 @@ include_once('../includes/config.php');
 include_once('../includes/connection.php');
 include_once('../includes/system.php');
 $user = new User;
-$article = new Article;
+$article = new Article("");
 
 if($user->logged_in() && isset($_GET['id'])){
 	$article->delete($_GET['id']);

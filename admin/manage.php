@@ -4,8 +4,9 @@ session_start();
 include_once('../includes/config.php');
 include_once('../includes/connection.php');
 include_once('../includes/system.php');
-$article = new Article();
-$articles = $article->fetch_all("article_timestamp");
+//$article = new Article();
+$articles = new Articles;
+$articles = $articles->fetch_all("article_timestamp");
 ?>
 <!doctype html>
 <html>
@@ -21,8 +22,8 @@ $articles = $article->fetch_all("article_timestamp");
                 <h4>Artikel verwalten</h4>
                 <?php
 				echo "<ol>";
-				foreach($articles as $articleinfo){
-					echo "<li><a href='edit.php?id=".$articleinfo['article_id']."'>Bearbeite &quot;".$articleinfo['article_title']."&quot;</a>  oder <a href='delete.php?id=".$articleinfo['article_id']."' style='color:#aa0000;'>L&ouml;sche Ihn</a></li>";
+				foreach($articles as $article){
+					echo "<li><a href='edit.php?id=".$article->id."'>Bearbeite &quot;".$article->title."&quot;</a>  oder <a href='delete.php?id=".$article->id."' style='color:#aa0000;'>L&ouml;sche Ihn</a></li>";
 				}
 				echo "</ol>";
                 ?>
