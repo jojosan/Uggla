@@ -1,24 +1,15 @@
 <?php
-
-session_start();
+include_once('../includes/config.php');
 include_once('../includes/connection.php');
+include_once('../includes/system.php');
+$user = new User;
+$article = new Article("");
+
+if($user->logged_in() && isset($_GET['id'])){
+	$article->delete($_GET['id']);
+	header("Location: index.php");
+}else{
+	header("Location: index.php");
+	exit();
+}
 ?>
-     <!doctype html>
-<html>
-	<head>
-		<meta charset="UTF-8" />
-
-		<title>CMS</title>
-		<link rel="stylesheet" type="text/css" href="../assets/style.css">
-	</head>
-
-	<body>
-		<div class="container">
-				<a href="index.php" id="logo">Dashboard</a>
-				<br />
-                
-                <h4>Artikel verwalten</h4>
-                
-		</div>
-	</body>
-</html>
