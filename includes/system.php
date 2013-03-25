@@ -67,20 +67,22 @@
 	########*/
 	
 	class Articles{
-		public function fetch_all($orderby/*, $ascordesc*/){
+		public function fetch_all($orderby, $ascordesc){
 			global $pdo;
-			$query = $pdo->prepare("SELECT article_id FROM article ORDER BY ? ASC");
-			$query->bindValue(1, $orderby);
+			$query = $pdo->prepare("SELECT * FROM article ORDER BY ".$orderby." ".$ascordesc);
+			//$query->bindValue(1, $orderby);
 			//$query->bindValue(2, $ascordesc);
 			$query->execute();
 
 			$ids = $query->fetchAll(PDO::FETCH_ASSOC);
+			//print_r($ids);
 			foreach($ids as $id){
 				$article = new Article($id['article_id']);
 				$articles[] = clone $article;
 				$article = null;
 			}
 			return $articles;
+			//print_r($articles);
 		}
 	}
 	/*########
