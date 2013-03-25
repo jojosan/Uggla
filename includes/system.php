@@ -14,25 +14,6 @@
 			$this->timestamp = $article['article_timestamp'];
 			$this->author = $article['article_author'];
 		}
-		/*public function fetch_all($orderby) {
-			global $pdo;
-
-			$query = $pdo->prepare("SELECT * FROM article ORDER BY ? ASC");
-			$query->bindValue(1, $orderby);
-			$query->execute();
-
-			return $query->fetchAll();
-		}
-
-		public function fetch($article_id) {
-			global $pdo;
-
-			$query = $pdo->prepare("SELECT * FROM article WHERE article_id = ?");
-			$query->bindValue(1, $article_id);
-			$query->execute();
-
-			return $query->fetch();
-		}*/
 		public function create($title, $content/*, $user*/){
 			global $pdo;
 			if (isset($title, $content)) {
@@ -86,20 +67,22 @@
 	########*/
 	
 	class Articles{
-		public function fetch_all($orderby/*, $ascordesc*/){
+		public function fetch_all($orderby, $ascordesc){
 			global $pdo;
-			$query = $pdo->prepare("SELECT article_id FROM article ORDER BY ? ASC");
-			$query->bindValue(1, $orderby);
+			$query = $pdo->prepare("SELECT * FROM article ORDER BY ".$orderby." ".$ascordesc);
+			//$query->bindValue(1, $orderby);
 			//$query->bindValue(2, $ascordesc);
 			$query->execute();
 
 			$ids = $query->fetchAll(PDO::FETCH_ASSOC);
+			//print_r($ids);
 			foreach($ids as $id){
 				$article = new Article($id['article_id']);
 				$articles[] = clone $article;
 				$article = null;
 			}
 			return $articles;
+			//print_r($articles);
 		}
 	}
 	/*########
@@ -135,6 +118,7 @@
 		public function log_in($user_name, $user_password, $location){
 			global $pdo;
 			if (isset($user_name, $user_password)) {
+				$user_name = mysql_real_escape_string($user_name);
 				$user_password = md5($user_password);
 				if (empty($user_name) or empty($user_password)) {
 					$error = 'Bitte alle Felder ausfüllen!';
