@@ -6,7 +6,7 @@ include_once('../includes/connection.php');
 include_once('../includes/system.php');
 //$article = new Article();
 $articles = new Articles;
-$articles = $articles->fetch_all("article_timestamp");
+$articles = $articles->fetch_all("article_timestamp", "DESC");
 ?>
 <!doctype html>
 <html>
