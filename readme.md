@@ -9,8 +9,8 @@
 
 
 ## Siehe auch
-* [Probleme und Bugs](https://github.com/lukasepple/Pina/issues)
-* [Doku](https://github.com/lukasepple/Pina/wiki)
+* [Probleme und Bugs](https://github.com/Weltraumakustik/Pina/issues)
+* [Doku](https://github.com/Weltraumakustik/Pina/wiki)
 
 ## Gebaut von:
 ### Dennis
@@ -26,6 +26,7 @@ Webseite: [GreenMystery](http://green-mystery.org)
 Twitter: [@LennyCode](https://twitter.com/LennyCode)  
 Webseite: [Vezoov](http://www.vezoov.com/)
 
-### Fork: Lukas
+### Lukas
+Skype: ruby_de
 Twitter: [@lukasepple](https://twitter.com/lukasepple)  
 Webseite: <http://lukasepple.de>
