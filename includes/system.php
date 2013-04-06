@@ -118,7 +118,7 @@
 		public function log_in($user_name, $user_password, $location){
 			global $pdo;
 			if (isset($user_name, $user_password)) {
-				//$user_name = mysql_real_escape_string($user_name);
+				$user_name = $pdo->real_escape_string($user_name);
 				$user_password = md5($user_password);
 				if (empty($user_name) or empty($user_password)) {
 					$error = 'Bitte alle Felder ausfüllen!';
