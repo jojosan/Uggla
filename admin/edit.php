@@ -9,9 +9,10 @@ $user = new User;
 
 
 if ($user->logged_in() && isset($_GET['id'])){
-	$article = new Article("");
+	$articles = new Articles();
+	$article = new Article($_GET['id']);
 	if(isset($_POST['title'], $_POST['content'])){
-		$error = $article->update($_GET['id'], $_POST['title'], $_POST['content']);
+		$error = $article->update($_POST['title'], $_POST['content']);
 		if(!isset($error)){
 			header("Location: index.php");
 			exit();

@@ -7,10 +7,10 @@ include_once('../includes/system.php');
 
 $user = new User;
 
-$article = new Article("");
+$articles = new Articles();
 
 if ($user->logged_in()) { 
-	$error = $article->create($_POST['title'], $_POST['content']);
+	$error = $articles->create($_POST['title'], $_POST['content']);
 	if(!isset($error) && isset($_POST['title'], $_POST['content'])){
 		header("Location: index.php");
 	}

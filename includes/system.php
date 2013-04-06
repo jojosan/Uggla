@@ -14,29 +14,10 @@
 			$this->timestamp = $article['article_timestamp'];
 			$this->author = $article['article_author'];
 		}
-		public function create($title, $content/*, $user*/){
+		public function update($new_title, $new_content){
 			global $pdo;
-			if (isset($title, $content)) {
-				if (empty($title) or empty($content)) {
-					$error = 'Alle Felder ausfüllen';
-					return $error;
-				}else{
-					$query = $pdo->prepare("INSERT INTO article (article_title, article_content, article_timestamp, article_author) VALUES (?, ?, ?, ?)");
-			
-					$query->bindValue(1, $title);
-					$query->bindValue(2, nl2br($content));
-					$query->bindValue(3, time());	
-					$query->bindValue(4, $_SESSION['logged_in']);
-			
-					$query->execute();
-				}
-			}
-			
-		}
-		public function update($article_id, $new_title, $new_content){
-			global $pdo;
-			if(isset($article_id, $new_title, $new_content)){
-				if(empty($new_title) or empty($new_content) or empty($article_id)){
+			if(isset($new_title, $new_content)){
+				if(empty($new_title) or empty($new_content)){
 					$error = 'Alle Felder ausfüllen';
 					return $error;
 				}else{
@@ -44,7 +25,7 @@
 					$query->bindValue(1, $new_title);
 					$query->bindValue(2, nl2br($new_content));
 					$query->bindValue(3, time());
-					$query->bindValue(4, $article_id);
+					$query->bindValue(4, $this->id);
 					
 					$query->execute();
 					if($query->rowCount() <= 0){
@@ -54,10 +35,10 @@
 				}
 			}
 		}
-		public function delete($article_id){
+		public function delete(){
 			global $pdo;
 			$query = $pdo->prepare("DELETE FROM article WHERE article_id = ?");
-			$query->bindValue(1, $article_id);
+			$query->bindValue(1, $this->id);
 			$query->execute();
 		}
 	}
@@ -82,7 +63,27 @@
 				$article = null;
 			}
 			return $articles;
-			//print_r($articles);
+		}
+		public function get($id){
+			return new Article($id);
+		}
+		public function create($title, $content/*, $user*/){
+			global $pdo;
+			if (isset($title, $content)) {
+				if (empty($title) or empty($content)) {
+					$error = 'Alle Felder ausfüllen';
+					return $error;
+				}else{
+					$query = $pdo->prepare("INSERT INTO article (article_title, article_content, article_timestamp, article_author) VALUES (?, ?, ?, ?)");
+			
+					$query->bindValue(1, $title);
+					$query->bindValue(2, nl2br($content));
+					$query->bindValue(3, time());	
+					$query->bindValue(4, $_SESSION['logged_in']);
+			
+					$query->execute();
+				}
+			}
 		}
 	}
 	/*########
@@ -118,7 +119,6 @@
 		public function log_in($user_name, $user_password, $location){
 			global $pdo;
 			if (isset($user_name, $user_password)) {
-				$user_name = $pdo->real_escape_string($user_name);
 				$user_password = md5($user_password);
 				if (empty($user_name) or empty($user_password)) {
 					$error = 'Bitte alle Felder ausfüllen!';
