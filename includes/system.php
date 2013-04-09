@@ -9,8 +9,8 @@
 			
 			$article = $query->fetch();
 			$this->id = $article['article_id'];
-			$this->title = $article['article_title'];
-			$this->content = $article['article_content'];
+			$this->title = str_replace("\\\"", "\"", str_replace("\\'", "'", $article['article_title']));
+			$this->content = str_replace("\\\"", "\"", str_replace("\\'", "'", $article['article_content']));
 			$this->timestamp = $article['article_timestamp'];
 			$this->author = $article['article_author'];
 		}

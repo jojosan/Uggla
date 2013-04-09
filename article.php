@@ -5,6 +5,7 @@ include_once('includes/system.php');
 
 $user = new User;
 $template = new Template;
+$articles = new Articles();
 if (isset($_GET['id'])) {
 	$id = $_GET['id'];
 	$article = new Article($id);
