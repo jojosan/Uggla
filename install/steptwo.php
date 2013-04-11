@@ -1,9 +1,6 @@
 <?php
-include_once "../includes/config.php";
-if(isset($_POST['site_user'], $_POST['site_password'], $_POST['site_mail'], $_POST['install'])){
-	$rows = $pdo->exec("INSERT INTO `users` (`user_id`, `user_name`, `user_password`, `user_mail`) VALUES(1, '".$_POST['site_user']."', '".md5($_POST['site_password'])."', '".$_POST['site_mail']."',)");
-	echo 'Gut!';
-	
+include_once "../includes/connection.php";
+//INSERT DES USERS IN DATENBANK
 }else{
 ?>
 <!DOCTYPE html>
