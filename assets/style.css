@@ -24,6 +24,10 @@ body {
 	margin: 0 auto;
 }
 
+/*
+ * Texte/ Links
+ */
+ 
 a:link, a:visited {
 	color: slateGray;
 	text-decoration: none;
@@ -71,6 +75,11 @@ h2{
 h3,h4,h5,h6{
 	font-size:1em;
 }
+
+/*
+ * Inputs
+ */
+ 
 input[type=text], input[type=password], textarea {
 	-webkit-appearance:	none;
 	padding: 5px;
