@@ -20,7 +20,7 @@ body {
 }
 
 .container {
-	width: 400px;
+	width: 450px;
 	margin: 0 auto;
 }
 
@@ -99,7 +99,7 @@ footer{
 	-webkit-appearance:	none;
 	padding: 5px;
 	border: 1px solid #ccc;
-	width: 400px;
+	width: 450px;
 	height: 30px;
 	margin: 0px 0px 10px 0px;
 	font-family: 'Open Sans', sans-serif;
@@ -151,6 +151,12 @@ footer{
 	border-radius: 10px;
 }
 
+.error {
+	color: #d96d55;
+	font-size: 12px;
+	font-style: italic;
+	margin: 10px 0px;
+}
 
 /*
  * Clearfix: contain floats

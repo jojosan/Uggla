@@ -52,7 +52,20 @@ if(isset($_POST['db_server'], $_POST['db_name'], $_POST['db_user'], $_POST['db_p
 			<div id="install">
 				<h1>Yeah, es geht los mit Pina!</h1>
 				<p>
-					<small>Erstelle eine leere Mysql-Datenbank. Hole dir die Zugangsdaten. Stelle sicher das die <code>includes/config.php</code> beschreibbar ist.</small>
+					<small>
+						Erstelle eine leere Mysql-Datenbank& hole dir die Zugangsdaten.</br>
+						Stelle sicher das die <code>includes/config.php</code> beschreibbar ist.</br>
+					</small>
+					<div class="error">
+						<?php
+							$filename = 'includes/config.php';
+							if (is_writable($filename)) {
+								echo "";
+							} else {
+								echo "Die Datei kann <strong>nicht</strong> beschrieben werden, bitte ändere ihre Rechte auf <strong>777</strong>!";
+							}
+						?>
+					</div>
 				</p>
 				<form action="install.php" method="post">
 					<h2>Datenbank</h2>
