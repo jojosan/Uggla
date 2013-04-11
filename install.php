@@ -38,7 +38,7 @@ if(isset($_POST['db_server'], $_POST['db_name'], $_POST['db_user'], $_POST['db_p
 	
 }else{
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 	<head>
 		<meta charset="utf-8"/>
@@ -46,7 +46,8 @@ if(isset($_POST['db_server'], $_POST['db_name'], $_POST['db_user'], $_POST['db_p
 		<link rel="stylesheet" href="./assets/style.css"/>
 	</head>
 	<body>
-	<div class="installbar"></div>
+	<div class="installbar" style="width: 33%;"></div>
+    <div id="schritt" style="left: 10%;">Schritt <strong>1/3</strong></div>
 		<div class="container">
 			<div id="install">
 				<h1>Yeah, es geht los mit Pina!</h1>
@@ -61,10 +62,10 @@ if(isset($_POST['db_server'], $_POST['db_name'], $_POST['db_user'], $_POST['db_p
 					<input type="password" name="db_password" placeholder="Mysql-Passwort"/><br />
 					<h2>Meta</h2>
 					<input type="text" name="site_name" placeholder="Seitenname"/><br />
-					<h2>User</h2>
+					<h2>Dein erster User; das bist Du!</h2>
 					<input type="text" name="site_user" placeholder="Adminaccountname"/>
-					<input type="password" name="site_password" placeholder="Adminpassword"/><br />
-					<input type="submit" value="install" name="install"/>
+					<input type="password" name="site_password" placeholder="Adminpasswort"/><br />
+					<input type="submit" value="Installieren" name="install"/>
 				</form>
 			</div>
 		</div>
