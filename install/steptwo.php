@@ -1,7 +1,8 @@
 <?php
-include_once "../includes/connection.php";
-//INSERT DES USERS IN DATENBANK
-}else{
+include_once('../includes/config.php');
+include_once('../includes/connection.php');
+include_once('../includes/system.php');
+// INSERT KRAM
 ?>
 <!DOCTYPE html>
 <html lang="de">
