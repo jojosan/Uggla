@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['db_server'], $_POST['db_name'], $_POST['db_user'], $_POST['db_password'], $_POST['site_name'], $_POST['site_user'], $_POST['site_password'], $_POST['install'])){
+if(isset($_POST['db_server'], $_POST['db_name'], $_POST['db_user'], $_POST['db_password'], $_POST['site_name'], $_POST['install'])){
 	try{
 		$pdo = new PDO("mysql:dbname=".$_POST['db_name'].";host=".$_POST['db_server']."", $_POST['db_user'], $_POST['db_password']);
 	}catch(PDOException $e) {
@@ -25,7 +25,6 @@ if(isset($_POST['db_server'], $_POST['db_name'], $_POST['db_user'], $_POST['db_p
 
 
 
-	$rows = $pdo->exec("INSERT INTO `users` (`user_id`, `user_name`, `user_password`) VALUES(1, '".$_POST['site_user']."', '".md5($_POST['site_password'])."')");
 	$rows = $pdo->exec("CREATE TABLE IF NOT EXISTS `users_logged` (
   `user_name` varchar(255) NOT NULL,
   `user_ip` varchar(255) NOT NULL,
@@ -75,9 +74,6 @@ if(isset($_POST['db_server'], $_POST['db_name'], $_POST['db_user'], $_POST['db_p
 					<input type="password" name="db_password" placeholder="Mysql-Passwort"/><br />
 					<h2>Meta</h2>
 					<input type="text" name="site_name" placeholder="Seitenname"/><br />
-					<h2>Dein erster User; das bist Du!</h2>
-					<input type="text" name="site_user" placeholder="Adminaccountname"/>
-					<input type="password" name="site_password" placeholder="Adminpasswort"/><br />
 					<input type="submit" value="Installieren" name="install"/>
 				</form>
 			</div>
