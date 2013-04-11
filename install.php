@@ -46,24 +46,27 @@ if(isset($_POST['db_server'], $_POST['db_name'], $_POST['db_user'], $_POST['db_p
 		<link rel="stylesheet" href="./assets/style.css"/>
 	</head>
 	<body>
+	<div class="installbar"></div>
 		<div class="container">
-			<h1>Yeah, es geht los mit Pina!</h1>
-			<p>
-				<small>Erstelle eine leere Mysql-Datenbank. Hole dir die Zugangsdaten. Stelle sicher das die <code>includes/config.php</code> beschreibbar ist.</small>
-			</p>
-			<form action="install.php" method="post">
-				<h2>Datenbank</h2>
-				<input type="text" name="db_server" placeholder="Mysql-Server"/>
-				<input type="text" name="db_name" placeholder="Datenbankname"/><br />
-				<input type="text" name="db_user" placeholder="Mysql-Benutzer"/>
-				<input type="password" name="db_password" placeholder="Mysql-Passwort"/><br />
-				<h2>Meta</h2>
-				<input type="text" name="site_name" placeholder="Seitenname"/><br />
-				<h2>User</h2>
-				<input type="text" name="site_user" placeholder="Adminaccountname"/>
-				<input type="password" name="site_password" placeholder="Adminpassword"/><br />
-				<input type="submit" value="install" name="install"/>
-			</form>
+			<div id="install">
+				<h1>Yeah, es geht los mit Pina!</h1>
+				<p>
+					<small>Erstelle eine leere Mysql-Datenbank. Hole dir die Zugangsdaten. Stelle sicher das die <code>includes/config.php</code> beschreibbar ist.</small>
+				</p>
+				<form action="install.php" method="post">
+					<h2>Datenbank</h2>
+					<input type="text" name="db_server" placeholder="Mysql-Server"/>
+					<input type="text" name="db_name" placeholder="Datenbankname"/><br />
+					<input type="text" name="db_user" placeholder="Mysql-Benutzer"/>
+					<input type="password" name="db_password" placeholder="Mysql-Passwort"/><br />
+					<h2>Meta</h2>
+					<input type="text" name="site_name" placeholder="Seitenname"/><br />
+					<h2>User</h2>
+					<input type="text" name="site_user" placeholder="Adminaccountname"/>
+					<input type="password" name="site_password" placeholder="Adminpassword"/><br />
+					<input type="submit" value="install" name="install"/>
+				</form>
+			</div>
 		</div>
 	</body>
 </html>
