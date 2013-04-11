@@ -104,7 +104,7 @@ footer{
 /*
  * Installation
  */
-#install input[type=text], #install input[type=password], #install textarea {
+#install input[type=text], #install input[type=email], #install input[type=password], #install textarea {
 	-webkit-appearance:	none;
 	padding: 5px;
 	border: 1px solid #ccc;
@@ -116,7 +116,7 @@ footer{
 	color: #666666;
 }
 
-#install input[type=text]:focus, #install input[type=password]:focus, #install textarea:focus {
+#install input[type=text]:focus, #install input[type=email]:focus, #install input[type=password]:focus, #install textarea:focus {
 	outline: none;
 	
 }
