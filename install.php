@@ -53,7 +53,7 @@ if(isset($_POST['db_server'], $_POST['db_name'], $_POST['db_user'], $_POST['db_p
 				<h1>Yeah, es geht los mit Pina!</h1>
 				<p>
 					<small>
-						Erstelle eine leere Mysql-Datenbank& hole dir die Zugangsdaten.</br>
+						Erstelle eine leere Mysql-Datenbank & hole dir die Zugangsdaten.</br>
 						Stelle sicher das die <code>includes/config.php</code> beschreibbar ist.</br>
 					</small>
 					<div class="error">
