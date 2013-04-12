@@ -27,6 +27,13 @@ if ($user->logged_in() && isset($_GET['id'])){
 		<meta charset="UTF-8" />
 		<title>CMS</title>
 		<link rel="stylesheet" type="text/css" href="../assets/style.css">
+		<!-- WICHTIG; SOLLTE SPÄTER WIE BEI WORDPRESS ÜDER EINE FUNCTION EINGEBUNDEN WERDEN -->
+		<script type="text/javascript" src="../includes/lib/tiny_mce/tiny_mce.js"></script>
+		<script type="text/javascript">
+			tinyMCE.init({
+					mode : "textareas"
+			});
+		</script>
 	</head>
 
 	<body>

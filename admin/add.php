@@ -26,15 +26,7 @@ if ($user->logged_in()) {
 		<script type="text/javascript" src="../includes/lib/tiny_mce/tiny_mce.js"></script>
 		<script type="text/javascript">
 			tinyMCE.init({
-					language : "de",
 					mode : "textareas"
-					theme : "advanced",
-					theme_advanced_buttons1 : "mymenubutton,bold,italic,underline,separator,strikethrough,justifyleft,justifycenter,justifyright,justifyfull,bullist,numlist,undo,redo,link,unlink",
-					theme_advanced_buttons2 : "",
-					theme_advanced_buttons3 : "",
-					theme_advanced_toolbar_location : "top",
-					theme_advanced_toolbar_align : "left",
-					theme_advanced_statusbar_location : "none",
 			});
 		</script>
 	</head>
