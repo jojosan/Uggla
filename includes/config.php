@@ -2,7 +2,8 @@
  /*DB*/
  define('DB_SERVER', 'localhost');
   define('DB_NAME', 'weltraum');
- define('DB_USER', 'root'); define('DB_PASS', 'toor');
+ define('DB_USER', 'root');
+ define('DB_PASS', 'toor');
  /*Site Info*/
- define('SITE_NAME', 'Pina');
+ define('SITE_NAME', 'Lukas Pina');
  ?>

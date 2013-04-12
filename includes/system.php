@@ -109,12 +109,36 @@
 
 			return $query->fetchAll();
 		}
-		//Auf der Agenda
-		public function create($user_name, $user_password){
-		
+		public function create($user_name, $user_password, $user_mail){
+			global $pdo;
+			if ((empty($user_name) or empty($user_password) or empty($user_mail)) or !isset($user_name, $user_password, $user_mail)) {
+				$error = 'Nicht alle Daten angegeben!';
+				return $error;
+			}else{
+				$query = $pdo->prepare("INSERT INTO users(user_name, user_password, user_mail) VALUES(?, ?, ?)");
+				$query->bindValue(1, $user_name);
+				$query->bindValue(2, md5($user_password));
+				$query->bindValue(3, $user_mail);
+				$query->execute();
+			}
 		}
-		public function update($user_id, $new_name, $new_password){
-		
+		public function update($user_id, $new_name, $new_password, $new_mail){
+			global $pdo;
+			if ((empty($title) or empty($content)) and isset($user_name, $user_password, $user_mail)) {
+				$error = 'Alle Nicht alle Daten angegeben!';
+					return $error;
+			}else{
+				$query = $pdo->prepare("UPDATE article SET user_name = ? , user_password = ?, user_mail = ? WHERE user_id = ?");
+				$query->bindValue(1, $new_name);
+				$query->bindValue(2, md5($new_password));
+				$query->bindValue(3, $new_mail);
+				$query->bindValue(4, $user_id);
+				$query->execute();
+				if($query->rowCount() <= 0){
+					$error = "Fehler mit der Datenbank";
+					return $error;
+				}
+			}
 		}
 		public function log_in($user_name, $user_password, $location){
 			global $pdo;
@@ -135,8 +159,9 @@
 			
 					if($num == 1) {
 						//JA
+						$user = $query->fetch();
 						$query = $pdo->prepare("INSERT INTO users_logged (user_name, user_ip, timestamp, status) VALUES (?, ?, ?, ?)");
-				
+						
 						$query->bindValue(1, $username);
 						$query->bindValue(2, getenv('REMOTE_ADDR'));
 						$query->bindValue(3, time());
@@ -145,6 +170,9 @@
 						$query->execute();
 			
 						$_SESSION['logged_in'] = true;
+						$_SESSION['user']['id'] = $user['user_id'];
+						$_SESSION['user']['name'] = $user['user_name'];
+						$_SESSION['user']['mail'] = $user['user_mail'];
 						header('Location: '.$location.'');
 						exit();
 					} else {
@@ -167,6 +195,13 @@
 			session_start();
 			if(isset($_SESSION['logged_in'])){
 				return true;
+			}else{
+				return false;
+			}
+		}
+		public function current_user(){
+			if($this->logged_in()){
+				return $_SESSION['user'];
 			}else{
 				return false;
 			}

@@ -2,7 +2,18 @@
 include_once('../includes/config.php');
 include_once('../includes/connection.php');
 include_once('../includes/system.php');
-// INSERT KRAM
+$user = new User;
+if(isset($_POST['site_user'], $_POST['site_password'], $_POST['site_password_2'], $_POST['site_mail'], $_POST['install'])){
+	if($_POST['site_password'] != $_POST['site_password_2']){
+		$error = "Passwörter stimmen nicht überein";
+	}else{
+		$error = $user->create($_POST['site_user'], $_POST['site_password'], $_POST['site_mail']);
+		if(!isset($error)){
+			header("Location: stepthree.php");
+			exit();
+		}
+	}
+}
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -18,14 +29,15 @@ include_once('../includes/system.php');
 			<div id="install">
 				<h1>Dein erster User; das bist Du!</h1>
 				<p>
-					<small>Nehme dir bitte kurz Zeit & erstelle dein Profil, wir wollen nicht viel wissen!</small></br>
+					<small>Nehme dir bitte kurz Zeit & erstelle dein Profil, wir wollen nicht viel wissen!</small><br /><?php if(isset($error)){ 
+						echo "<small style='color:#aa0000'>".$error."</small>"; }?>
 				</p>
 				<form action="steptwo.php" method="post">
 					<h2>Hej [unbekannter], wie dürfen wir dich nennen?</h2>
 					<input type="text" name="site_user" placeholder="Adminaccountname"/>
 					<h2>Sicher dich ab!</h2>
 					<input type="password" name="site_password" placeholder="Passwort"/><br />
-					<input type="password" name="site_password_2" placeholder="Wiederhole dein Passwort (keine Funktion)"/><br />
+					<input type="password" name="site_password_2" placeholder="Wiederhole dein Passwort"/><br />
 					<h2>Ok, wie können wir dich erreichen?</h2>
 					<p>
 						<small>Wir werden dir <strong>nie</strong> Werbung oder anderen nervigen Kram schicken, gebe aber zu deiner eigenen Sicherheit eine gültige E-Mail Adresse an.</small>
@@ -37,4 +49,4 @@ include_once('../includes/system.php');
 		</div>
 	</body>
 </html>
-<?php } ?>
+<?php  ?>
