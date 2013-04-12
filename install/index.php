@@ -46,8 +46,8 @@ if(isset($_POST['db_server'], $_POST['db_name'], $_POST['db_user'], $_POST['db_p
 		<link rel="stylesheet" href="../assets/style.css"/>
 	</head>
 	<body>
-	<div class="installbar" style="width: 33%;"></div>
-    <div id="schritt" style="left: 10%;">Schritt <strong>1/3</strong></div>
+	<div class="installbar" style="width: 50%;"></div>
+    <div id="schritt" style="left: 10%;">Schritt <strong>1/2</strong></div>
 		<div class="container">
 			<div id="install">
 				<h1>Yeah, es geht los mit Pina!</h1>

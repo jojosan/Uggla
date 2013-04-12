@@ -9,7 +9,7 @@ if(isset($_POST['site_user'], $_POST['site_password'], $_POST['site_password_2']
 	}else{
 		$error = $user->create($_POST['site_user'], $_POST['site_password'], $_POST['site_mail']);
 		if(!isset($error)){
-			header("Location: stepthree.php");
+			header("Location: ../");
 			exit();
 		}
 	}
@@ -23,8 +23,8 @@ if(isset($_POST['site_user'], $_POST['site_password'], $_POST['site_password_2']
 		<link rel="stylesheet" href="../assets/style.css"/>
 	</head>
 	<body>
-	<div class="installbar" style="width: 50%;"></div>
-    <div id="schritt" style="left: 30%;">Schritt <strong>2/3</strong></div>
+	<div class="installbar" style="width: 100%;"></div>
+    <div id="schritt" style="left: 10%;">Schritt <strong>2/2</strong></div>
 		<div class="container">
 			<div id="install">
 				<h1>Dein erster User; das bist Du!</h1>
