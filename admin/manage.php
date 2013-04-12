@@ -1,11 +1,13 @@
 <?php
 
 session_start();
-include_once('../includes/config.php');
-include_once('../includes/connection.php');
-include_once('../includes/system.php');
+
+require_once('../includes/config.php');
+require_once('../includes/connection.php');
+require_once('../includes/system.php');
+
 //$article = new Article();
-$articles = new Articles;
+$articles = new Articles();
 $articles = $articles->fetch_all("article_timestamp", "DESC");
 ?>
 <!doctype html>

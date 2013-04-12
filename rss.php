@@ -1,8 +1,8 @@
 <?php
 	header("Contet-type: application/rss+xml");
-	include("./includes/config.php");
-	include("./includes/connection.php");
-	include("./includes/system.php");
+	require_once("./includes/config.php");
+	require_once("./includes/connection.php");
+	require_once("./includes/system.php");
 	$articles = new Articles();
 	$pageURL = 'http';
 	if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
@@ -31,9 +31,9 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
 		<item>
 			<title><?php echo $article->title; ?></title>
 			<description><?php echo $article->content; ?></description>
-			<link><?php echo $pageURL."article.php?id=".$article->id ?></link>
-			<author><?php echo $article->author ?></author>
-			<guid><?php echo $pageURL."article.php?id=".$article->id ?></guid>
+			<link><?php echo $pageURL."article.php?id=".$article->id; ?></link>
+			<author><?php echo $article->author; ?></author>
+			<guid><?php echo $pageURL."article.php?id=".$article->id; ?></guid>
 			<pubDate><?php echo date("r", $article->timestamp); ?></pubDate>
 		</item>
 		<?php $c++; } ?>

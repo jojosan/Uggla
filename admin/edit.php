@@ -1,24 +1,26 @@
 <?php
 
 session_start();
-include_once('../includes/config.php');
-include_once('../includes/connection.php');
-include_once('../includes/system.php');
 
-$user = new User;
+require_once('../includes/config.php');
+require_once('../includes/connection.php');
+require_once('../includes/system.php');
+
+$user = new User();
 
 
-if ($user->logged_in() && isset($_GET['id'])){
+if ($user->logged_in() && isset($_GET['id'])) {
 	$articles = new Articles();
-	$article = new Article($_GET['id']);
-	if(isset($_POST['title'], $_POST['content'])){
-		$error = $article->update($_POST['title'], $_POST['content']);
+	$article = new Article(htmlspecialchars(trim($_GET['id'])));
+
+	if(isset($_POST['title'], $_POST['content'])) {
+		$error = $article->update(htmlspecialchars(trim($_POST['title'])), htmlspecialchars(trim($_POST['content'])));
 		if(!isset($error)){
 			header("Location: index.php");
 			exit();
 		}
 	}
-	$toedit = new Article($_GET['id']);
+	$toedit = new Article(htmlspecialchars(trim($_GET['id'])));
 
 ?>
 <!doctype html>
@@ -46,7 +48,6 @@ if ($user->logged_in() && isset($_GET['id'])){
                 	<input type="text" name="title" placeholder="Titel" value="<?php echo $toedit->title; ?>"/><br /><br />
                     <textarea rows="15"	cols="50" placeholder="Artikel" name="content"><?php echo str_replace("<br />", "", $toedit->content);?></textarea><br /><br />
                     <input type="submit" value="&Auml;nderungen speichern" />
-                    
                 </form>
       
 		</div>

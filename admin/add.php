@@ -1,19 +1,20 @@
 <?php
 
 session_start();
-include_once('../includes/config.php');
-include_once('../includes/connection.php');
-include_once('../includes/system.php');
+require_once('../includes/config.php');
+require_once('../includes/connection.php');
+require_once('../includes/system.php');
 
-$user = new User;
+$user = new User();
 
 $articles = new Articles();
 
-if ($user->logged_in()) { 
-	$error = $articles->create($_POST['title'], $_POST['content']);
-	if(!isset($error) && isset($_POST['title'], $_POST['content'])){
-		header("Location: index.php");
-	}
+if ($user->logged_in()) {
+	$error = $articles->create(htmlspecialchars(trim($_POST['title'])), htmlspecialchars(trim($_POST['content'])));
+	
+    if(!isset($error) && isset($_POST['title'], $_POST['content'])) {
+        header("Location: index.php");
+    }
 ?>
 <!doctype html>
 <html>
@@ -40,7 +41,6 @@ if ($user->logged_in()) {
                 	<input type="text" name="title" placeholder="Titel" /><br /><br />
                     <textarea rows="15"	cols="50" placeholder="Artikel" name="content"></textarea><br /><br />
                     <input type="submit" value="Speichern" />
-                    
                 </form>
       
 		</div>

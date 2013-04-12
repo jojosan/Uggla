@@ -1,9 +1,11 @@
 <?php
 
-include_once('../includes/config.php');
-include_once('../includes/connection.php');
-include_once('../includes/system.php');
-$user = new User;
+require_once('../includes/config.php');
+require_once('../includes/connection.php');
+require_once('../includes/system.php');
+
+$user = new User();
+
 if($user->logged_in()) { ?>
 <!doctype html>
 <html>
@@ -24,13 +26,12 @@ if($user->logged_in()) { ?>
                     <li><a href="manage.php">Artikel verwalten</a></li>
                     <li><a href="logout.php">Abmelden</a></li>
                 </ol>
-                	
             
 		</div>
 	</body>
 </html>
     <?php } else {
-		$error = $user->log_in($_POST['username'], $_POST['password'], "index.php");
+		$error = $user->log_in(htmlspecialchars(trim($_POST['username'])), htmlspecialchars(trim($_POST['password'])), "index.php");
 	?>
     <!doctype html>
 <html>
@@ -62,7 +63,7 @@ if($user->logged_in()) { ?>
 		</div>
 	</body>
 </html>
-    <?php	
+<?php
 }
 
 ?>

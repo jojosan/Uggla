@@ -1,10 +1,13 @@
 <?php
-include_once('includes/config.php');
-include_once('includes/connection.php');
-include_once('includes/system.php');
+
+require_once('includes/config.php');
+require_once('includes/connection.php');
+require_once('includes/system.php');
 
 $articles = new Articles();
 $template = new Template();
 $user = new User;
-include("template/home.php");
+
+require_once("template/home.php");
+
 ?>

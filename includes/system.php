@@ -16,11 +16,11 @@
 		}
 		public function update($new_title, $new_content){
 			global $pdo;
-			if(isset($new_title, $new_content)){
-				if(empty($new_title) or empty($new_content)){
+			if(isset($new_title, $new_content)) {
+				if(empty($new_title) || empty($new_content)) {
 					$error = 'Alle Felder ausfüllen';
 					return $error;
-				}else{
+				} else {
 					$query = $pdo->prepare("UPDATE article SET article_title = ? , article_content = ?, article_timestamp = ? WHERE article_id = ?");
 					$query->bindValue(1, $new_title);
 					$query->bindValue(2, nl2br($new_content));
@@ -114,7 +114,7 @@
 			if ((empty($user_name) or empty($user_password) or empty($user_mail)) or !isset($user_name, $user_password, $user_mail)) {
 				$error = 'Nicht alle Daten angegeben!';
 				return $error;
-			}else{
+			} else {
 				$query = $pdo->prepare("INSERT INTO users(user_name, user_password, user_mail) VALUES(?, ?, ?)");
 				$query->bindValue(1, $user_name);
 				$query->bindValue(2, md5($user_password));
@@ -124,17 +124,18 @@
 		}
 		public function update($user_id, $new_name, $new_password, $new_mail){
 			global $pdo;
-			if ((empty($title) or empty($content)) and isset($user_name, $user_password, $user_mail)) {
+			if((empty($title) or empty($content)) and isset($user_name, $user_password, $user_mail)) {
 				$error = 'Alle Nicht alle Daten angegeben!';
 					return $error;
-			}else{
+			} else {
 				$query = $pdo->prepare("UPDATE article SET user_name = ? , user_password = ?, user_mail = ? WHERE user_id = ?");
 				$query->bindValue(1, $new_name);
 				$query->bindValue(2, md5($new_password));
 				$query->bindValue(3, $new_mail);
 				$query->bindValue(4, $user_id);
 				$query->execute();
-				if($query->rowCount() <= 0){
+
+				if($query->rowCount() <= 0) {
 					$error = "Fehler mit der Datenbank";
 					return $error;
 				}
@@ -142,9 +143,9 @@
 		}
 		public function log_in($user_name, $user_password, $location){
 			global $pdo;
-			if (isset($user_name, $user_password)) {
+			if(isset($user_name, $user_password)) {
 				$user_password = md5($user_password);
-				if (empty($user_name) or empty($user_password)) {
+				if(empty($user_name) or empty($user_password)) {
 					$error = 'Bitte alle Felder ausfüllen!';
 					return $error;
 				} else {
@@ -191,22 +192,22 @@
 				}
 			}
 		}
-		public function logged_in(){
+		public function logged_in() {
 			session_start();
-			if(isset($_SESSION['logged_in'])){
+			if(isset($_SESSION['logged_in'])) {
 				return true;
-			}else{
+			} else {
 				return false;
 			}
 		}
-		public function current_user(){
-			if($this->logged_in()){
+		public function current_user() {
+			if($this->logged_in()) {
 				return $_SESSION['user'];
-			}else{
+			} else {
 				return false;
 			}
 		}
-		public function log_out(){
+		public function log_out() {
 			session_start();
 			session_destroy();
 		}
@@ -218,7 +219,7 @@
 	
 	class Template{
 		public function get($file){
-			include("./template/".$file);
+			require_once("./template/".$file);
 		}
 	}
 ?>
