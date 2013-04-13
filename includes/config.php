@@ -5,7 +5,7 @@
  define('DB_USER', 'root');
  define('DB_PASS', 'root');
  /*Site Info*/
- define('SITE_NAME', 'Weltraum');
+ define('SITE_NAME', 'Pina');
  /*Site STYLE*/
  define('ADMIN_TEMPLATE', 'flat');
  ?>

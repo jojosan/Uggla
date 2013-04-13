@@ -12,7 +12,7 @@ if($user->logged_in()) { ?>
 	<head>
 		<meta charset="UTF-8" />
 
-		<title>CMS</title>
+		<title>Dashboard - <?php echo SITE_NAME; ?></title>
 		<link rel="stylesheet" type="text/css" href="../assets/style.css">
 	</head>
 
@@ -20,7 +20,7 @@ if($user->logged_in()) { ?>
 		<div class="container">
 				<a href="index.php" id="logo">Startseite</a> &ndash; <a href="../">Seite ansehen</a>
 				<br />
-                
+				<!-- TEST AUSGABEN<?php echo $_SESSION['user']['name']; ?> / <?php echo ADMIN_TEMPLATE; ?>-->
                 <ol>
                 	<li><a href="add.php">Artikel schreiben</a></li>
                     <li><a href="manage.php">Artikel verwalten</a></li>
