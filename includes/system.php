@@ -21,11 +21,16 @@
 					$error = 'Alle Felder ausfüllen';
 					return $error;
 				} else {
-					$query = $pdo->prepare("UPDATE article SET article_title = ? , article_content = ?, article_timestamp = ? WHERE article_id = ?");
+					$query = $pdo->prepare("UPDATE article SET article_title = ? , article_content = ?, article_timestamp = ? article_author = ? WHERE article_id = ?");
 					$query->bindValue(1, $new_title);
 					$query->bindValue(2, nl2br($new_content));
 					$query->bindValue(3, time());
-					$query->bindValue(4, $this->id);
+					if(isset($_SESSION['logged_in'])){
+						$query->bindValue(4, $_SESSION['user']['name']);
+					}else{
+						$query->bindValue(4, "Pina");
+					}
+					$query->bindValue(5, $this->id);
 					
 					$query->execute();
 					if($query->rowCount() <= 0){
@@ -51,12 +56,9 @@
 		public function fetch_all($orderby, $ascordesc){
 			global $pdo;
 			$query = $pdo->prepare("SELECT * FROM article ORDER BY ".$orderby." ".$ascordesc);
-			//$query->bindValue(1, $orderby);
-			//$query->bindValue(2, $ascordesc);
 			$query->execute();
 
 			$ids = $query->fetchAll(PDO::FETCH_ASSOC);
-			//print_r($ids);
 			foreach($ids as $id){
 				$article = new Article($id['article_id']);
 				$articles[] = clone $article;
@@ -67,7 +69,7 @@
 		public function get($id){
 			return new Article($id);
 		}
-		public function create($title, $content/*, $user*/){
+		public function create($title, $content){
 			global $pdo;
 			if (isset($title, $content)) {
 				if (empty($title) or empty($content)) {
@@ -78,8 +80,12 @@
 			
 					$query->bindValue(1, $title);
 					$query->bindValue(2, nl2br($content));
-					$query->bindValue(3, time());	
-					$query->bindValue(4, $_SESSION['logged_in']);
+					$query->bindValue(3, time());
+					if(isset($_SESSION['logged_in'])){
+						$query->bindValue(4, $_SESSION['user']['name']);
+					}else{
+						$query->bindValue(4, "Pina");
+					}
 			
 					$query->execute();
 				}
