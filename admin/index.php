@@ -31,7 +31,9 @@ if($user->logged_in()) { ?>
 	</body>
 </html>
     <?php } else {
-		$error = $user->log_in(htmlspecialchars(trim($_POST['username'])), htmlspecialchars(trim($_POST['password'])), "index.php");
+		if(isset($_POST['submit'])){
+			$error = $user->log_in(htmlspecialchars(trim($_POST['username'])), htmlspecialchars(trim($_POST['password'])), "index.php");
+		}
 	?>
     <!doctype html>
 <html>
@@ -57,7 +59,7 @@ if($user->logged_in()) { ?>
                 <form action="index.php" method="post">
                 	<input type="text" name="username" placeholder="Name" autocomplete="off"/>
                     <input type="password" name="password" placeholder="Passwort" autocomplete="off"/>
-                    <input type="submit" value="Login" />
+                    <input type="submit" value="Login" name="submit"/>
                 </form>			
            
 		</div>

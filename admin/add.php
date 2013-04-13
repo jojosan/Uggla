@@ -10,8 +10,9 @@ $user = new User();
 $articles = new Articles();
 
 if ($user->logged_in()) {
-	$error = $articles->create(htmlspecialchars(trim($_POST['title'])), htmlspecialchars(trim($_POST['content'])));
-	
+	if(isset($_POST['submit'])){
+		$error = $articles->create(htmlspecialchars(trim($_POST['title'])), htmlspecialchars(trim($_POST['content'])));
+	}
     if(!isset($error) && isset($_POST['title'], $_POST['content'])) {
         header("Location: index.php");
     }
@@ -48,7 +49,7 @@ if ($user->logged_in()) {
                 <form action="add.php" method="post">
                 	<input type="text" name="title" placeholder="Titel" /><br /><br />
                     <textarea rows="15"	cols="50" placeholder="Artikel" name="content"></textarea><br /><br />
-                    <input type="submit" value="Speichern" />
+                    <input type="submit" value="Speichern" name="submit" />
                 </form>
       
 		</div>
