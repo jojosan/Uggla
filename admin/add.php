@@ -11,7 +11,7 @@ $articles = new Articles();
 
 if ($user->logged_in()) {
 	if(isset($_POST['submit'])){
-		$error = $articles->create(htmlspecialchars(trim($_POST['title'])), htmlspecialchars(trim($_POST['content'])));
+		$error = $articles->create(trim($_POST['title']),trim($_POST['content']));
 	}
     if(!isset($error) && isset($_POST['title'], $_POST['content'])) {
         header("Location: index.php");
@@ -21,7 +21,7 @@ if ($user->logged_in()) {
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<title>CMS</title>
+		<title>Artikel hinzufügen</title>
 		<link rel="stylesheet" type="text/css" href="../assets/style.css">
 		
 		<!-- WICHTIG; SOLLTE SPÄTER WIE BEI WORDPRESS ÜDER EINE FUNCTION EINGEBUNDEN WERDEN -->

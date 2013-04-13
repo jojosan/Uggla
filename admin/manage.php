@@ -14,7 +14,7 @@ $articles = $articles->fetch_all("article_timestamp", "DESC");
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<title>Articles</title>
+		<title>Artikel verwalten</title>
 		<link rel="stylesheet" type="text/css" href="../assets/style.css">
 	</head>
 

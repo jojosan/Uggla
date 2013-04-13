@@ -10,12 +10,12 @@ Artikel können ohne viel Tamtam geschrieben und verwaltet werden, es gibt einen
 
 ## Gebaut von:
 ### Dennis
-Skype: dennism1995 
+Skype: dennism1995  
 Twitter: [@weltraumakustik](http://twitter.com/weltraumakustik)   
 Webseite: [Weltraumakustik](http://weltraumakustik.de)
 
 ### Lukas
-Skype: ruby_de
+Skype: ruby_de  
 Twitter: [@lukasepple](https://twitter.com/lukasepple)  
 Webseite: <http://lukasepple.de>
 

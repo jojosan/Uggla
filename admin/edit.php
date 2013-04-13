@@ -14,7 +14,7 @@ if ($user->logged_in() && isset($_GET['id'])) {
 	$article = new Article(htmlspecialchars(trim($_GET['id'])));
 
 	if(isset($_POST['title'], $_POST['content'])) {
-		$error = $article->update(htmlspecialchars(trim($_POST['title'])), htmlspecialchars(trim($_POST['content'])));
+		$error = $article->update(trim($_POST['title']),trim($_POST['content']));
 		if(!isset($error)){
 			header("Location: index.php");
 			exit();
@@ -27,7 +27,7 @@ if ($user->logged_in() && isset($_GET['id'])) {
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<title>CMS</title>
+		<title>Artikel bearbeiten</title>
 		<link rel="stylesheet" type="text/css" href="../assets/style.css">
 		<!-- WICHTIG; SOLLTE SPÄTER WIE BEI WORDPRESS ÜDER EINE FUNCTION EINGEBUNDEN WERDEN -->
 		<script type="text/javascript" src="../includes/lib/tiny_mce/tiny_mce.js"></script>
