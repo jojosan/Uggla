@@ -41,7 +41,7 @@ if($user->logged_in()) { ?>
 							<ul class="menu">
 								<li><a href="#">Profil bearbeiten</a></li>
 								<li><a href="#">Passwort ändern</a></li>
-								<li><a href="#">Ausloggen</a></li>
+								<li><a href="logout.php">Abmelden</a></li>
 							</ul>
 						</div>
 					</div>
@@ -53,6 +53,8 @@ if($user->logged_in()) { ?>
 			<div class="ugglacontainer">
 					<a href="index.php" id="logo">Startseite</a> &ndash; <a href="../">Seite ansehen</a>
 					<br />
+					<h1>Hej <?php echo $_SESSION['user']['name']; ?>, derzeit sind einige Dinge noch als Platzhalter eingesetzt!</br>
+					Bitte nenne in der jetzigen Version <strong>keine</strong> Bugs, alle Fehler sind bekannt.</h1>
 					<!-- TEST AUSGABEN<?php echo $_SESSION['user']['name']; ?> / <?php echo ADMIN_TEMPLATE; ?>-->
 					<ol>
 						<li><a href="add.php">Artikel schreiben</a></li>
