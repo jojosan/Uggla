@@ -32,12 +32,10 @@ body {
 a:link, a:visited {
 	color: slateGray;
 	text-decoration: none;
-	border-bottom: 1px dotted slateGray;
 }
 
 a:hover {
 	color: #444;
-	border-bottom-color: #444; 
 }
 
 small {
@@ -191,7 +189,7 @@ footer{
 }
 
 .ugglapanel {
-	width: 452px;
+	width: 440px;
 	height: 42px;
 	float: right;
 	margin: -70px 41px 0px 0px;
@@ -205,20 +203,25 @@ footer{
 	background: #272727;
 	margin-top: -26px;
 	padding-right: 27px;
+	display: block;
 }
 
 .userava img{
 	width: 27px;
 	height: 27px;
 	margin: 21px  13px 0px 31px;
-	border-radius: 20px;
+	border-radius: 5px;
+	display:inline;
+	border:1px solid #111;
+	box-shadow:0 0 3px rgba(0, 0, 0, 0.8) inset;
 }
 
 .username p{
 	color: #d4d4d4;
 	font-weight: 600;
 	float: left;
-	margin: -30px 0px 0px 68px;
+	margin: -31px 0px 0px 68px;
+	font-size: 12px;
 }
 
 .ugglanav {
@@ -231,8 +234,72 @@ footer{
 }
 
 .ugglacontainer {
-	margin: 0 auto;
-	width: 450px;
+	width: 100%;
+	border-top: 7px solid #de6264;
+	margin-top: -28px;
+	margin-left: 280px;
+	padding: 20px 20px 20px 30px;
+}
+
+.ugglaop {
+	width: 11px;
+	height: 10px;
+	float: right;
+	margin: -29px 0px 0px 10px;
+}
+
+.uggladrop {
+	display: none;
+	background: #272727;
+	padding: 15px 10px 15px 32px;
+}
+
+#ugglaprofil:hover .uggladrop {
+	display: block;
+	padding: 15px -4px 15px 27px;
+	background:-webkit-linear-gradient(#272727, #110e0e);
+	background:linear-gradient(#272727, #110e0e);
+	margin-right: -27px;
+}
+
+.menu li {
+	font-size: 12px;
+	margin: 10px 0 0;
+	list-style: none;
+}
+.menu li a {
+	color: #d4d4d4;
+}
+.menu li a:hover {
+	color: #eee;
+	-webkit-transition: color 1s;
+	-moz-transition: color 1s;
+	-o-transition: color 1s;
+	-ms-transition: color 1s;
+	transition: color 1s;
+}
+
+.ugglamenu li {
+	list-style: none;
+	float: left;
+	padding-right: 36px;
+	padding-top: 3px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size: 12px;
+}
+
+.ugglamenu li a{
+	color: #d4d4d4;
+}
+
+.ugglamenu li a:hover {
+	color: #eee;
+	-webkit-transition: color 2s;
+	-moz-transition: color 2s;
+	-o-transition: color 2s;
+	-ms-transition: color 2s;
+	transition: color 2s;
 }
  
  

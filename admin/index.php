@@ -22,15 +22,30 @@ if($user->logged_in()) { ?>
 				<img src="../assets/img/ugglalogo.jpg">
 			</div>
 			<div class="ugglapanel">
-				Hilfe
-				<div id="ugglaprofil">
-					<div class="userava">
-						<img src="https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-ash4/376665_4516891528513_11538084_n.jpg">
+				<ul class="ugglamenu">
+								<li><a href="#">Hilfe</a></li>
+								<li><a href="#">Einstellungen</a></li>
+				</ul>
+				<a href="">
+					<div id="ugglaprofil">
+						<div class="userava">
+							<img src="https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-ash4/376665_4516891528513_11538084_n.jpg">
+						</div>
+						<div class="username">
+							<p><?php echo $_SESSION['user']['name']; ?> Nachname</p>
+								<div class="ugglaop">
+									<img src="../assets/img/ugglaop.jpg">
+								</div>
+						</div>
+						<div class="uggladrop">
+							<ul class="menu">
+								<li><a href="#">Profil bearbeiten</a></li>
+								<li><a href="#">Passwort ändern</a></li>
+								<li><a href="#">Ausloggen</a></li>
+							</ul>
+						</div>
 					</div>
-					<div class="username">
-						<p><?php echo $_SESSION['user']['name']; ?> Nachname</p>
-					</div>
-				</div>
+				</a>
 			</div>
 		</div>
 		
