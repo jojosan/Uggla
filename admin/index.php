@@ -13,7 +13,7 @@ if($user->logged_in()) { ?>
 		<meta charset="UTF-8" />
 
 		<title>Dashboard - <?php echo SITE_NAME; ?></title>
-		<link rel="stylesheet" type="text/css" href="../assets/style.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 
 	<body>
@@ -48,9 +48,8 @@ if($user->logged_in()) { ?>
 				</a>
 			</div>
 		</div>
-		
-		<div class="ugglanav">
-		</div>
+		<div id="ugglanav">
+				</div>
 			<div class="ugglacontainer">
 					<a href="index.php" id="logo">Startseite</a> &ndash; <a href="../">Seite ansehen</a>
 					<br />
