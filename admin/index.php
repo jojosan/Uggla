@@ -7,7 +7,8 @@ require_once('../includes/system.php');
 $user = new User();
 
 if($user->logged_in()) { 
- include('includes/header.php'); ?>
+ include('includes/header.php'); 
+ echo "Hej</div>";?>
 	<a href="index.php" id="logo">Startseite</a> &ndash; <a href="../">Seite ansehen</a>
 	<br />
 	<h1>Hej <?php echo $_SESSION['user']['name']; ?>, derzeit sind einige Dinge noch als Platzhalter eingesetzt!</br>
