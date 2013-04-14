@@ -17,17 +17,36 @@ if($user->logged_in()) { ?>
 	</head>
 
 	<body>
-		<div class="container">
-				<a href="index.php" id="logo">Startseite</a> &ndash; <a href="../">Seite ansehen</a>
-				<br />
-				<!-- TEST AUSGABEN<?php echo $_SESSION['user']['name']; ?> / <?php echo ADMIN_TEMPLATE; ?>-->
-                <ol>
-                	<li><a href="add.php">Artikel schreiben</a></li>
-                    <li><a href="manage.php">Artikel verwalten</a></li>
-                    <li><a href="logout.php">Abmelden</a></li>
-                </ol>
-            
+		<div class="navbar">
+			<div class="ugglalogo">
+				<img src="../assets/img/ugglalogo.jpg">
+			</div>
+			<div class="ugglapanel">
+				Hilfe
+				<div id="ugglaprofil">
+					<div class="userava">
+						<img src="https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-ash4/376665_4516891528513_11538084_n.jpg">
+					</div>
+					<div class="username">
+						<p><?php echo $_SESSION['user']['name']; ?> Nachname</p>
+					</div>
+				</div>
+			</div>
 		</div>
+		
+		<div class="ugglanav">
+		</div>
+			<div class="ugglacontainer">
+					<a href="index.php" id="logo">Startseite</a> &ndash; <a href="../">Seite ansehen</a>
+					<br />
+					<!-- TEST AUSGABEN<?php echo $_SESSION['user']['name']; ?> / <?php echo ADMIN_TEMPLATE; ?>-->
+					<ol>
+						<li><a href="add.php">Artikel schreiben</a></li>
+						<li><a href="manage.php">Artikel verwalten</a></li>
+						<li><a href="logout.php">Abmelden</a></li>
+					</ol>
+				
+			</div>
 	</body>
 </html>
     <?php } else {

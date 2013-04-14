@@ -6,11 +6,12 @@
 
 html, body { 
 	height: 100%;
-	background: #fcfcfc;
+	background: #f2f2f0;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
+	overflow: hidden;
 }
 
 body {
@@ -166,6 +167,75 @@ footer{
 	font-style: italic;
 	margin: 10px 0px;
 }
+
+/*
+ * Adminbereich
+ */
+ 
+.navbar {
+	width: 100%;
+	height: 72px;
+	position: absolute;
+	top: 0px;
+	background: #373737;
+	color: #d4d4d4;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	text-transform: uppercase;
+}
+
+.ugglalogo {
+	width: 139px;
+	height: 25px;
+	margin: 23px 0px 21px 44px;
+}
+
+.ugglapanel {
+	width: 452px;
+	height: 42px;
+	float: right;
+	margin: -70px 41px 0px 0px;
+	padding: 27px 0px 0px 0px;
+}
+
+#ugglaprofil {
+	min-width: 214px;
+	height: 72px;
+	float: right;
+	background: #272727;
+	margin-top: -26px;
+	padding-right: 27px;
+}
+
+.userava img{
+	width: 27px;
+	height: 27px;
+	margin: 21px  13px 0px 31px;
+	border-radius: 20px;
+}
+
+.username p{
+	color: #d4d4d4;
+	font-weight: 600;
+	float: left;
+	margin: -30px 0px 0px 68px;
+}
+
+.ugglanav {
+	width: 280px;
+	height: 100%;
+	background: #f2f2ea;
+	border-right: 1px solid #d8d7d3;
+	float: left;
+	margin-top: -28px;
+}
+
+.ugglacontainer {
+	margin: 0 auto;
+	width: 450px;
+}
+ 
+ 
 
 /*
  * Clearfix: contain floats
