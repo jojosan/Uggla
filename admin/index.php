@@ -16,7 +16,7 @@ if($user->logged_in()) {
 	<ol>
 		<li><a href="add.php">Artikel schreiben</a></li>
 		<li><a href="manage.php">Artikel verwalten</a></li>
-	</ol>				
+	</ol>	
 <?php include('includes/footer.php'); 
 } else {
 	if(isset($_POST['submit'])){

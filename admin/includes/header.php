@@ -21,7 +21,9 @@
 				<a href="">
 					<div id="ugglaprofil">
 						<div class="userava">
-							<img src="https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-ash4/376665_4516891528513_11538084_n.jpg">
+						<img src="http://www.gravatar.com/avatar/<?php
+						echo md5( strtolower( trim( $_SESSION['user']['mail'] ) ) );					
+						?>.png">					
 						</div>
 						<div class="username">
 							<p><?php echo $_SESSION['user']['name']; ?> Nachname</p>
