@@ -236,7 +236,10 @@ footer{
 	background: #f2f2ea;
 	border-right: 1px solid #d8d7d3;
 	float: left;
-	margin-top: -100px;
+	margin-top: -28px;
+	-webkit-box-shadow: 1px 0px 2px 0px rgba(55, 55, 55, 0.1); /* WebKit */
+	-moz-box-shadow: 1px 0px 2px 0px rgba(55, 55, 55, 0.1); /* Firefox */
+	box-shadow: 1px 0px 2px 0px rgba(55, 55, 55, 0.1); /* Standard */
 }
 
 .ugglacontainer {
@@ -307,6 +310,65 @@ footer{
 	-ms-transition: color 2s;
 	transition: color 2s;
 }
+
+/*
+ * Navbar/ Iconfont etc.
+ */
+.ugglaside li {
+	color: #919191;
+	font-size: 26px;
+	margin-bottom: 18px;
+	list-style: none;
+}
+
+.ugglasideright {
+	width: 280px;
+	height: 68px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	font-size: 12px;
+	border-bottom: 1px solid #e3e5d0;
+	margin-bottom: -18px;
+}
+
+.ugglasideright p {
+	margin: -25px 0px 0px 103px;	
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	font-size: 12px;
+	color: #6b6b6b;
+}
+
+.dash {
+	padding: 0px 28px 20px 28px;
+	background: #de6262;
+	color: #ffffff;
+	font-size: 26px;
+	border-bottom: 1px solid #e3e5d0;
+}
+
+.profil {
+	padding: 0px 24px 19px 28px;
+	border-left: 4px solid #5fabdf;
+	color: #919191;
+	background: #f2f2ea;
+	color: #919191;
+	font-size: 26px;
+	border-bottom: 1px solid #e3e5d0;
+	margin-top: -5px;
+}
+
+.news {
+	padding: 0px 24px 19px 28px;
+	border-left: 4px solid #70c67f;
+	color: #919191;
+	background: #f2f2ea;
+	color: #919191;
+	font-size: 26px;
+	border-bottom: 1px solid #e3e5d0;
+}
+
+
  
  
 
