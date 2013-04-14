@@ -345,27 +345,29 @@ footer{
 	color: #ffffff;
 	font-size: 26px;
 	border-bottom: 1px solid #e3e5d0;
+	border-right: 1px solid #e3e5d0;
 }
 
 .profil {
-	padding: 0px 24px 19px 28px;
+	padding: 0px 25px 19px 28px;
 	border-left: 4px solid #5fabdf;
 	color: #919191;
 	background: #f2f2ea;
 	color: #919191;
 	font-size: 26px;
 	border-bottom: 1px solid #e3e5d0;
-	margin-top: -5px;
+	border-right: 1px solid #e3e5d0;
 }
 
 .news {
-	padding: 0px 24px 19px 28px;
+	padding: 0px 23px 19px 28px;
 	border-left: 4px solid #70c67f;
 	color: #919191;
 	background: #f2f2ea;
 	color: #919191;
 	font-size: 26px;
 	border-bottom: 1px solid #e3e5d0;
+	border-right: 1px solid #e3e5d0;
 }
 
 
