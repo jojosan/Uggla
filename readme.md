@@ -1,6 +1,6 @@
 # Uggla, früher Pina
 ![Pina in action](./assets/pinainaction.png)  
-Pina ist ein einfaches Bloggingsystem.  
+Uggla ist ein einfaches Bloggingsystem.  
 Artikel können ohne viel Tamtam geschrieben und verwaltet werden, es gibt einen Artikel-RSS-Feed. Fürs Templating gibt es eine schöne und umfangreiche API, mit der sogar die Artikel verwaltet werden können!
 
 ## Siehe auch
@@ -18,10 +18,6 @@ Webseite: [Weltraumakustik](http://weltraumakustik.de)
 Skype: ruby_de  
 Twitter: [@lukasepple](https://twitter.com/lukasepple)  
 Webseite: <http://lukasepple.de>
-
-### Themes: Joana
-Twitter: [@green_mystery](http://twitter.com/green_mystery)   
-Webseite: [GreenMystery](http://green-mystery.org)
 
 ### Bugfixes/ Verbesserungen/ Sicherheitskram: Lenny
 Twitter: [@LennyCode](https://twitter.com/LennyCode)  
