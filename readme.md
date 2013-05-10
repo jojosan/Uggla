@@ -1,4 +1,4 @@
-# Pina
+# Uggla, früher Pina
 ![Pina in action](./assets/pinainaction.png)  
 Pina ist ein einfaches Bloggingsystem.  
 Artikel können ohne viel Tamtam geschrieben und verwaltet werden, es gibt einen Artikel-RSS-Feed. Fürs Templating gibt es eine schöne und umfangreiche API, mit der sogar die Artikel verwaltet werden können!
