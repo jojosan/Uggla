@@ -30,7 +30,7 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
 
 		<item>
 			<title><?php echo $article->title; ?></title>
-			<description><?php echo $article->content; ?></description>
+			<description><![CDATA[<?php echo $article->content; ?>]]></description>
 			<link><?php echo $pageURL."article.php?id=".$article->id; ?></link>
 			<author><?php echo $article->author; ?></author>
 			<guid><?php echo $pageURL."article.php?id=".$article->id; ?></guid>
