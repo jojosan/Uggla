@@ -6,7 +6,7 @@ Artikel können ohne viel Tamtam geschrieben und verwaltet werden, es gibt einen
 ## Siehe auch
 * [Probleme und Bugs](https://github.com/Weltraumakustik/Pina/issues)
 * [Doku](https://github.com/Weltraumakustik/Pina/wiki)
-* [Testserver] (http://pina.weltraumakustik.de/)
+* *[Testserver] (http://pina.weltraumakustik.de/)* ***Vorerst keine neuen Versionen***
 
 ## Gebaut von:
 ### Dennis
