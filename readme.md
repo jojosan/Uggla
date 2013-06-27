@@ -29,7 +29,7 @@ Webseite: [Vezoov](http://www.vezoov.com/)
 
 ## Lizenz
 Wir veröffentlichen **Uggla** unter der [":) license"](http://licence.visualidiot.com/) und sagen [Visual idiot](https://github.com/idiot) 'Danke!'. 
-Das Logo und andere Grafischelemente sind nicht teil der Lizenz & sind somit nicht ohne Erlaubnis zu verwenden. 
+Das Logo und andere Grafischelemente sind nicht teil der Lizenz & sind somit nicht ohne Erlaubnis zu verwenden.   
 Das Copyright liegt bei Joana Breede & Dennis Mader.
 
 Der Lizenztext lautet:  
