@@ -28,7 +28,10 @@ Twitter: [@LennyCode](https://twitter.com/LennyCode)
 Webseite: [Vezoov](http://www.vezoov.com/)
 
 ## Lizenz
-Wir veröffentlichen Pina unter der [":) license"](http://licence.visualidiot.com/) und sagen [Visual idiot](https://github.com/idiot) 'Danke!'.  
+Wir veröffentlichen **Uggla** unter der [":) license"](http://licence.visualidiot.com/) und sagen [Visual idiot](https://github.com/idiot) 'Danke!'. 
+Das Logo und andere Grafischelemente sind nicht teil der Lizenz & sind somit nicht ohne Erlaubnis zu verwenden. 
+Das Copyright liegt bei Joana Breede & Dennis Mader.
+
 Der Lizenztext lautet:  
 By attaching this document to the given files (the “work”), you, the licensee, are hereby granted free usage in both personal and commerical environments, without any obligation of attribution or payment (monetary or otherwise). The licensee is free to use, copy, modify, publish, distribute, sublicence, and/or merchandise the work, subject to the licensee inflecting a positive message unto someone. This includes (but is not limited to): smiling, being nice, saying “thank you”, assisting other persons, or any similar actions percolating the given concept.
 The above copyright notice serves as a permissions notice also, and may optionally be included in copies or portions of the work.
