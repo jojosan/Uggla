@@ -2,11 +2,15 @@
 ![Pina in action](./assets/pinainaction.png)  
 Uggla ist ein einfaches Bloggingsystem.  
 Artikel können ohne viel Tamtam geschrieben und verwaltet werden, es gibt einen Artikel-RSS-Feed. Fürs Templating gibt es eine schöne und umfangreiche API, mit der sogar die Artikel verwaltet werden können!
+# Die kommende Webseite
+In den nächsten Tagen launchen wir eine Webseite, von der aus Uggla zum Download zur Verfügung stehen wird & Docs sowie Hilfe geliefert werden.
+![Webseite in Action](./assets/Startseite_web_2a.jpg "Webseite Screendesign")
+
 
 ## Siehe auch
 * [Probleme und Bugs](https://github.com/Weltraumakustik/Pina/issues)
 * [Doku](https://github.com/Weltraumakustik/Pina/wiki)
-* [Testserver] (http://pina.weltraumakustik.de/)
+* *[Testserver] (http://pina.weltraumakustik.de/)* ***Vorerst keine neuen Versionen***
 
 ## Gebaut von:
 ### Dennis
