@@ -6,6 +6,9 @@ Artikel können ohne viel Tamtam geschrieben und verwaltet werden, es gibt einen
 In den nächsten Tagen launchen wir eine Webseite, von der aus Uggla zum Download zur Verfügung stehen wird & Docs sowie Hilfe geliefert werden.
 ![Webseite in Action](./assets/Startseite_web_2a.jpg "Webseite Screendesign")
 
+# Das neue Dashboard der zweiten Alpha
+![Dashboard in Action](./assets/dashboard.png "Dashboard Screendesign")
+
 
 ## Siehe auch
 * [Probleme und Bugs](https://github.com/Weltraumakustik/Pina/issues)
